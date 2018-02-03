@@ -10,6 +10,7 @@ import javax.persistence.Id;
 import javax.persistence.MappedSuperclass;
 import javax.persistence.PrePersist;
 import javax.persistence.PreUpdate;
+import javax.persistence.Version;
 import java.io.Serializable;
 import java.time.LocalDate;
 import java.util.UUID;
@@ -32,6 +33,10 @@ public abstract class AbstractTimestampEntity implements Serializable {
 
     @Column(name = "updated_ts", nullable = false)
     private LocalDate updatedAt;
+
+    @Version
+    @Column(name = "version", nullable = false)
+    private Long version;
 
     @PrePersist
     protected void onCreate() {
