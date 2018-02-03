@@ -1,0 +1,1 @@
+INSERT INTO announcements (id) VALUES ('1');

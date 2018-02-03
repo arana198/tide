@@ -1,0 +1,19 @@
+version: '2.1'
+
+services:
+  tide:
+    build:
+      context: .
+    image: tide
+    container_name: tide
+    environment:
+      - SERVER_PORT=8001
+      - DB_DRIVER_CLASS=org.h2.Driver
+      - DB_SCHEMA=tide
+      - DB_USERNAME=tide
+      - DB_PASSWORD=
+      - DB_URL=jdbc:h2:mem:tide?autoReconnect=true
+      - JAVA_OPTS=-agentlib:jdwp=transport=dt_socket,server=y,suspend=n,address=5005
+    ports:
+     - 8001:8001
+

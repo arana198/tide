@@ -1,0 +1,27 @@
+info:
+  component: This is REST API for Tide application.
+
+server:
+  port: 8001
+  contextPath: /api/
+
+spring:
+  application:
+    name: studyit-api
+  datasource:
+    driverClassName: ${db.driver.class}
+    url: ${db.url}
+    username: ${db.username}
+    password: ${db.password}
+  jackson:
+    serialization:
+      WRITE_DATES_AS_TIMESTAMPS: false
+  jpa:
+    database-platform: ${db.platform}
+    properties:
+      hibernate:
+        dialect: ${db.hibernate.dialect}
+    show-sql: ${db.show.sql}
+    hibernate:
+      ddl-auto: none
+      format-sql: true

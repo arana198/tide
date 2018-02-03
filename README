@@ -1,0 +1,65 @@
+Tide-test
+================
+
+tide-test is a service that provides REST api for tide related data. The service is a RESTFUL, JSON api; however, there are a number of tools to aid with the exploration of the data.
+
+Dependencies
+------------
+
+This section lists all of the external dependencies.
+The address, port and other information required to connect to each dependency can be found in the environment-specific external configuration
+(i.e. application.properties in the application-configuration repository).
+
+* H2 Database
+
+Endpoints
+--------
+
+See ``{address}:{port}/swagger-ui.html`` for a list of endpoints exposed by this service.
+The UI endpoint lives under the root directory and can be accessed locally in browser via localhost:8002/
+
+Installation
+------------
+
+#### Build Docker Image
+
+If you wish, you can also build the image yourself.
+
+First build the application with:
+
+```bash
+./gradlew clean build
+```
+
+```bash
+docker build -t tide docker/.
+```
+
+or with docker-compose
+
+```bash
+docker-compose build
+```
+
+Running
+-------
+
+Use the docker compose file specified with the project and run the following command from the directory the docker compose file is in
+
+
+```bash
+docker-compose up -d
+```
+
+Or to run an individual service
+
+```bash
+docker-compose up -d --build tide
+```
+
+Contributing
+------------
+
+**Owners**
+
+Ankit Rana
