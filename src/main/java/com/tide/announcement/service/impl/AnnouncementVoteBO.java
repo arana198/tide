@@ -20,6 +20,6 @@ class AnnouncementVoteBO extends AbstractEntity {
     @Column(name = "like_count", nullable = false)
     private int likeCount;
 
-    @Column(name = "dislike_count")
+    @Column(name = "dislike_count", nullable = false)
     private int dislikeCount;
 }
